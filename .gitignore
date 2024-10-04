@@ -71,3 +71,6 @@ pkg
 !codis/cmd/fe/assets/**
 
 tests/tmp
+
+docs/doxygen
+rondb-**/**
