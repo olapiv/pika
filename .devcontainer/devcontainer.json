@@ -10,7 +10,6 @@
 		"source=pika-buildtrees,target=/workspaces/pika/buildtrees,type=volume",
         "source=pika-deps,target=/workspaces/pika/deps,type=volume",
         "source=pika-output,target=/workspaces/pika/output,type=volume",
-        "source=pika-pkg,target=/workspaces/pika/pkg,type=volume"
 	],
     "customizations": {
         "vscode": {
