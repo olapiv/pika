@@ -808,7 +808,10 @@ add_dependencies(${PROJECT_NAME}
   cache
 )
 
+set(RONDB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/rondb-22.10.5-linux-glibc2.28-arm64_v8")
+
 target_include_directories(${PROJECT_NAME}
+  PUBLIC "${RONDB_DIR}/include/storage/ndb"
   PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
   PUBLIC ${PROJECT_SOURCE_DIR}
   ${INSTALL_INCLUDEDIR}
@@ -816,6 +819,7 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
   cache
+  ${RONDB_DIR}/lib/libndbclient.so
   storage
   net
   pstd
