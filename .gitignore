@@ -67,10 +67,10 @@ buildtrees
 deps
 pkg
 
-#develop container
-.devcontainer
-
 # include codis fe javascript lib files
 !codis/cmd/fe/assets/**
 
 tests/tmp
+
+docs/doxygen
+rondb-**/**

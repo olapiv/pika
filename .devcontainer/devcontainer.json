@@ -1,0 +1,34 @@
+{
+    "name": "Pika builder",
+    "build": {
+        "context": "..",
+        "dockerfile": "../docker/Dockerfile_buidler"
+    },
+	"mounts": [
+		// Create a re-useable build directory
+		"source=pika-build,target=/workspaces/pika/build,type=volume",
+		"source=pika-buildtrees,target=/workspaces/pika/buildtrees,type=volume",
+        "source=pika-deps,target=/workspaces/pika/deps,type=volume",
+        "source=pika-output,target=/workspaces/pika/output,type=volume",
+	],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "github.copilot",
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools-extension-pack"
+            ],
+            // Set *default* container specific settings.json values on container create.
+            "settings": {
+                "github.copilot.enable": {
+                    "*": true,
+                    "plaintext": false,
+                    "markdown": false,
+                    "scminput": false
+                },
+                "github.copilot.editor.enableAutoCompletions": true
+            }
+        }
+    }
+}
